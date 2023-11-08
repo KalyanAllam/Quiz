@@ -1,0 +1,134 @@
+﻿@page "/"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Countries Quiz</h1>
+<p>Question</p>
+<p role="status">@question</p> <br>
+
+
+
+<button class="btn btn-primary" @onclick="IncrementCount">Get Question</button>
+<br>
+<p  </p>
+<button class="btn btn-primary" @onclick="ToggleAnswer">@buttonText</button>
+<br> 
+<p  </p>
+ 
+<br>
+<p  </p>
+<p style="display:@display">@answer</p>
+
+<p role="status">@finanswer</p>
+@code {
+    private string question="";
+     private string answer="";
+       private string finanswer="";
+    private string display = "block";
+    private string buttonText = "Show Answer";
+    private void IncrementCount()
+    {
+        display = "none";  
+        buttonText = "Show Answer";
+        Random rand = new Random();
+        int number = rand.Next(1,20);
+        switch (number)
+        {
+            case 1:
+                question="What is the  capital of India?";
+                answer="New Delhi";
+                break;
+            case 2:
+                question ="What is the  capital of France?";
+                 answer="Paris";
+                break;
+            case 3:
+               question ="What is the  capital of Spain?";
+                 answer="Madrid";
+                break;
+            case 4:
+                question ="What is the  capital of USA?";
+                 answer="Washington DC";
+                   break;
+            case 5:
+              question ="What is the capital of Japan?";
+                 answer="Tokyo";
+                break;
+ case 6:
+              question ="What is the capital of Finland?";
+                 answer="Helsinki";
+                break;
+
+  case 7:
+              question ="What is the capital of Denmark?";
+                 answer="Copanhagen";
+                break;
+  case 8:
+              question ="What is the capital of Eqypt?";
+                 answer="Cairo";
+                break;
+ case 9:
+              question ="What is the capital of Russia?";
+                 answer="Moscow";
+                break;
+    case 10:
+              question ="What is the capital of Uzbekistan?";
+                 answer="Tashkent";
+                break;         
+    case 11:
+               question ="What is the capital of Kenya?";
+                 answer="Nairobi";
+                break;         
+                  case 12:
+               question ="What is the capital of Mangolia?";
+                 answer="Ulaanbaatar ";
+                break;     
+                        case 13:
+               question ="What is the capital of Australia?";
+                 answer="Canberra ";
+                break;      
+                             case 14:
+               question ="What is the capital of Switzerland?";
+                 answer="Bern ";
+                break;     
+                                 case 15:
+               question ="What is the capital of New Zealand?";
+                 answer="Wellington ";
+                break;     
+                                      case 16:
+               question ="What is the capital of Georgia?";
+                 answer="Tbilisi ";
+                break;    
+                                           case 17:
+               question ="What is the capital of Indonesia?";
+                 answer="Jakarta ";
+                break;    
+                                              case 18:
+               question ="What is the capital of China?";
+                 answer="Beijing ";
+                break;   
+                    case 19:
+               question ="What is the capital of Iran?";
+                 answer="Tehran ";
+                break;   
+            default:
+               question = " ";
+                break;
+           
+        }
+    }
+    private void ToggleAnswer()
+    {
+        if (display == "none")
+        {
+            display = "block";
+            buttonText = "Hide Answer";
+        }
+        else
+        {
+            display = "none";
+            buttonText = "Show Answer";
+        }
+    }
+
+}

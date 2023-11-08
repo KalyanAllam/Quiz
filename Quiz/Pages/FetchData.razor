@@ -1,0 +1,79 @@
+﻿@page "/FetchData"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>USA States Quiz</h1>
+<p>Question</p>
+<p role="status">@question</p>
+<br>
+
+
+
+<button class="btn btn-primary" @onclick="IncrementCount">Get Question</button>
+<br>
+<p  </p>
+<button class="btn btn-primary" @onclick="ToggleAnswer">@buttonText</button>
+<br>
+<p  </p>
+
+<br>
+<p  </p>
+<p style="display:@display">@answer</p>
+
+<p role="status">@finanswer</p>
+@code {
+    private string question = "";
+    private string answer = "";
+    private string finanswer = "";
+    private string display = "block";
+    private string buttonText = "Show Answer";
+    private void IncrementCount()
+    {
+        display = "none";
+        buttonText = "Show Answer";
+        Random rand = new Random();
+        int number = rand.Next(1, 5);
+        switch (number)
+        {
+            case 1:
+                question = "What is the  capital of Georgia?";
+                answer = "Atlanta";
+                break;
+            case 2:
+                question = "What is the  capital of California?";
+                answer = "Sacremento";
+                break;
+            case 3:
+                question = "What is the  capital of North Carolina?";
+                answer = "Raleigh";
+                break;
+            case 4:
+                question = "What is the  capital of Texas?";
+                answer = "Austin";
+                break;
+            case 5:
+                question = "What is the capital of Indiana?";
+                answer = "Indianapolis";
+                break;
+          
+            default:
+                question = " ";
+                break;
+
+        }
+    }
+    private void ToggleAnswer()
+    {
+        if (display == "none")
+        {
+            display = "block";
+            buttonText = "Hide Answer";
+        }
+        else
+        {
+            display = "none";
+            buttonText = "Show Answer";
+        }
+    }
+
+}
